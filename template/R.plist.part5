@@ -1,0 +1,82 @@
+    </array>
+    <key>BBLMLanguageCode</key>
+    <string>R___</string>
+    <key>BBLMCommentLineDefault</key>
+    <string># </string>
+    <key>BBLMCommentPrefixDefault</key>
+    <string># </string>
+    <key>BBLMCommentSuffixDefault</key>
+    <string># </string>
+    <key>BBLMLanguageDisplayName</key>
+    <string>R</string>
+    <key>BBLMPreferredFilenameExtension</key>
+    <string>.R</string>	
+    <key>BBLMScansFunctions</key>
+    <true/>
+    <key>BBLMSuffixMap</key>
+    <array>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string>.r</string>
+        </dict>
+        <dict>
+            <key>BBLMLanguageSuffix</key>
+            <string>.R</string>
+        </dict>
+    </array>
+    <key>Language Features</key>
+    <dict>
+        <key>Identifier and Keyword Characters</key>
+        <string>1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz.~|!$%&gt;&amp;&lt;-:*+</string>
+        <!-- NOTE: Specify string-like-elements OR regular expression patterns 
+    
+            https://www.barebones.com/support/develop/clm.html#RegularExpressionPatterns
+        
+            From the Docs: 
+            If you provide either String Pattern or Comment Pattern, etc. (i.e. regex), all string-based 
+            patterns for strings and comments will be ignored.
+        -->
+
+    
+        <!-- REGEX PATTERNS -->
+        <key>String Pattern</key>
+        <string>(?x: ("(\\"|[^"])*") | ('(\\'|[^'])*') )</string>
+
+    
+        <key>Comment Pattern</key>
+        <string><![CDATA[
+        (?x:
+            (\#.*?$)
+        )
+        ]]></string>
+    
+    
+        <key>Skip Pattern</key>
+        <string><![CDATA[
+        (?x:
+            (?P>comment) |
+            (?P>string)
+        )]]></string>
+    
+    
+        <key>Function Pattern</key>
+        <string><![CDATA[
+            (?x:
+                (?P<function_name>[a-zA-Z0-9_\.]+)            (?# This pattern matches the function name)
+                (?P<function_word>\s*(<-|=)\s*function\s*)    (?# This pattern matches the literal "<- function")
+            )
+            ]]>
+        </string>
+    
+        <!-- New REGEX PATTERNS 
+        Keywords patterns are designed to accomidate whitespace in keywords (e.g. not in).
+        Number patterns have a default (https://www.barebones.com/support/technotes/language-module-changes.html)
+        and can be left blank.
+        -->
+        <key>Keyword Pattern</key>
+        <string></string>
+        <key>Number Pattern</key>
+        <string></string>
+</dict>
+</dict>
+</plist>
