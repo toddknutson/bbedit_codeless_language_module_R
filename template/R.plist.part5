@@ -62,8 +62,14 @@
         <key>Function Pattern</key>
         <string><![CDATA[
             (?x:
-                (?P<function_name>[a-zA-Z0-9_\.]+)            (?# This pattern matches the function name)
-                (?P<function_word>\s*(<-|=)\s*function\s*)    (?# This pattern matches the literal "<- function")
+                (?P<function_name>[a-zA-Z0-9_\.]+)                                 (?# This pattern matches the function name)
+                (?P<function_definer>\s*(<-|=)\s*function\s*)                      (?# This pattern matches the literal "<- function")
+                (?P<function_args>\((?>(?>[^()]+) | (?P>function_args))*\))        (?# This pattern matches parentheses around function args)
+                (?s).+?    
+                (?P<function_body>(?>   
+                        (?P<curly_braces>{(?>(?>[^{}]+) | (?P>curly_braces))*})    (?# This pattern matches the curly_braces that enclose a function body)
+                    )
+                )
             )
             ]]>
         </string>
