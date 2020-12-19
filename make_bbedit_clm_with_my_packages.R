@@ -27,15 +27,17 @@ message("Getting keywords")
 
 keywords_logical <- c("TRUE", "FALSE", "T", "F")
 keywords_logic <- c("!", "&amp;", "&amp;&amp;", "|", "||")
-keywords_syntax <- c(":", "::", ":::", "$", "@", "{", "}", "[", "]", "[[", "]]", "%any%", "?", "+", "–", "*", "/", "^", "%%", "%/%", "&lt;", "&gt;", "&lt;=", "&gt;=", "==", "!=", "&lt;-", "&lt;&lt;-", "=", "-&gt;", "-&gt;&gt;", "~", "%in%")
+keywords_syntax <- c(":", "::", ":::", "$", "@", "{", "}", "[", "]", "[[", "]]", "%any%", "?", "+", "–", "*", "/", "^", "%%", "%/%", "&lt;", "&gt;", "&lt;=", "&gt;=", "==", "!=", "&lt;-", "&lt;&lt;-", "=", "-&gt;", "-&gt;&gt;")
 keywords_reserved <- c("if", "else", "repeat", "while", "function", "for", "in", "next", "break", "NULL", "Inf", "-Inf", "NaN", "NA", "NA_integer_", "NA_real_", "NA_complex_", "NA_character_", "...")
-keywords <- c(keywords_logical, keywords_logic, keywords_syntax, keywords_reserved)
+keywords_my_favorites <- c("~", "%in%", "%&gt;%", "%$%", "%&lt;&gt;%", "%T%gt;%")
+
+keywords <- c(keywords_logical, keywords_logic, keywords_syntax, keywords_reserved, keywords_my_favorites)
 
 keywords_logical_comment <- '        <!-- R language logical operators. See ?logical in R for details -->'
 keywords_logic_comment <- '        <!-- R language logic evaluators. See ?Logic in R for details -->'
 keywords_syntax_comment <- '        <!-- R language syntax. See ?Syntax in R for details -->'
 keywords_reserved_comment <- '        <!-- R language reserved words. See ?Reserved.in R for details -->'
-
+keywords_my_favorites_comment <- '        <!-- My favorite syntax symbols (many from the magrittr R package) -->'
 
 
 
@@ -130,6 +132,17 @@ for (m in seq_along(keywords_reserved)) {
     line <- paste0("        <string>", keywords_reserved[m], "</string>")
 	writeLines(line, con = con2)
 }
+
+
+
+
+writeLines(keywords_my_favorites_comment, con = con2)
+for (m in seq_along(keywords_my_favorites)) {
+    line <- paste0("        <string>", keywords_my_favorites[m], "</string>")
+	writeLines(line, con = con2)
+}
+
+
 close(con2)
 
 
