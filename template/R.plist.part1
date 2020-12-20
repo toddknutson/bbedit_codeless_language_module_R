@@ -2,8 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <!--
-    R language module for BBEdit
-
+	BBEdit codeless language module for R scripts.
+    
+    Built using a custom set of Keywords and Predefined Names for my R packages.
+    See below for details:
+    <https://github.com/toddknutson/bbedit_codeless_language_module_R>
+    
+	Released under a Creative Commons Attribution-ShareAlike License:
+	<https://creativecommons.org/licenses/by-sa/4.0>
+	
+	Requires BBEdit 8.0 or higher. To install, copy here:
+	
+		~/Library/Application Support/BBEdit/Language Modules/
+	
+	and relaunch BBEdit.
 -->
 <dict>
     <key>BBEditDocumentType</key>
