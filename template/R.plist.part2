@@ -43,7 +43,7 @@
         <string>-&gt;&gt;</string>
         <string>~</string>
         <string>%in%</string>
-        <!-- R language reserved words. See ?Reserved.in R for details -->
+        <!-- R language reserved words. See ?Reserved in R for details -->
         <string>if</string>
         <string>else</string>
         <string>repeat</string>
