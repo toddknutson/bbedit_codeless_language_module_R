@@ -36,7 +36,7 @@ keywords <- c(keywords_logical, keywords_logic, keywords_syntax, keywords_reserv
 keywords_logical_comment <- '        <!-- R language logical operators. See ?logical in R for details -->'
 keywords_logic_comment <- '        <!-- R language logic evaluators. See ?Logic in R for details -->'
 keywords_syntax_comment <- '        <!-- R language syntax. See ?Syntax in R for details -->'
-keywords_reserved_comment <- '        <!-- R language reserved words. See ?Reserved.in R for details -->'
+keywords_reserved_comment <- '        <!-- R language reserved words. See ?Reserved in R for details -->'
 keywords_my_favorites_comment <- '        <!-- My favorite syntax symbols (many from the magrittr R package) -->'
 
 
